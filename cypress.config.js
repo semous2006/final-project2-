@@ -8,3 +8,16 @@ module.exports = defineConfig({
     },
   },
 });
+{
+  "name": "final-project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "cypress run"
+  },
+  "keywords": [],
+  "author": "Eslam Hassan",
+  "license": "ISC"
+}
