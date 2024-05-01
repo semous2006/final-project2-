@@ -32,3 +32,6 @@ https://docs.google.com/spreadsheets/d/1sV4RuHPEqLT_hL28JXbWYywjzVkDOQZrGsjcKfsI
 
 GitHub repository link
 https://thinking-tester-contact-list.herokuapp.com/
+API testing performed by postman 
+Please viset link below for results
+https://web.postman.co/workspace/My-Workspace~d4920383-6416-42cb-81c3-b1ea2bdefb2e/run/performance/1ef0803b-18b5-4f80-920e-cdd98c880844?static=true
