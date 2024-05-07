@@ -37,6 +37,9 @@ Security test
 .github/workflows/cypress-tests.yml
 
 
-Performance testing performed by postman 
+Performance testing performed by Jmeter 
 Please viset link below for results
-https://web.postman.co/workspace/My-Workspace~d4920383-6416-42cb-81c3-b1ea2bdefb2e/run/performance/1ef0803b-18b5-4f80-920e-cdd98c880844?static=true
+![Screen Shot 2024-05-06 at 9 29 42 PM](https://github.com/semous2006/final-project2-/assets/151662132/52a6c23e-f4ce-4653-9055-ad7dd81106a6)
+![Screen Shot 2024-05-06 at 9 15 56 PM](https://github.com/semous2006/final-project2-/assets/151662132/96d434b0-a003-4ac7-aa6a-8888ba9864a4)
+
+
