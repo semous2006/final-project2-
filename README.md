@@ -27,8 +27,6 @@ Test plan
 •	Test the website's response time under normal load conditions.
 •	Test the website's performance under high load conditions.
 
- Test Cases Spreadsheet avalible at 
-https://docs.google.com/spreadsheets/d/1sV4RuHPEqLT_hL28JXbWYywjzVkDOQZrGsjcKfsIleY/edit#gid=0
 
 GitHub repository link
 https://thinking-tester-contact-list.herokuapp.com/
