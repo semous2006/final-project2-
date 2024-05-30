@@ -1,6 +1,6 @@
-name: Check run
-
-on:
+ name: Check run
+ 
+ on:
   push:
     branches:
       - main
@@ -23,11 +23,12 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y nginx && sudo systemctl start nginx
 
     - name: ZAP Scan
-      uses: ./
+      uses: ./zap-scan
       id: action-baseline
       with:
         target: 'https://thinking-tester-contact-list.herokuapp.com'
         allow_issue_writing: false
+
 
 
         
