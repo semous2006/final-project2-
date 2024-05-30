@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths-ignore:
-      - '**.md'
+      - '**/*.md'
   pull_request:
     paths-ignore:
-      - '**.md'
+      - '**/*.md'
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - run: sudo apt-get update && sudo apt-get install -y nginx && sudo systemctl start nginx
+    - name: Install Nginx
+      run: sudo apt-get update && sudo apt-get install -y nginx && sudo systemctl start nginx
 
     - name: ZAP Scan
       uses: ./
@@ -27,6 +28,7 @@ jobs:
       with:
         target: 'https://thinking-tester-contact-list.herokuapp.com'
         allow_issue_writing: false
+
 
         
          
