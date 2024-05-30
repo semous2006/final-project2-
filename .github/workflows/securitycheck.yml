@@ -25,9 +25,9 @@ jobs:
       uses: ./
       id: action-baseline
       with:
-        target: '"https://thinking-tester-contact-list.herokuapp.com"
-
+        target: 'https://thinking-tester-contact-list.herokuapp.com'
         allow_issue_writing: false
+
         
          
           
