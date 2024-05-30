@@ -1,6 +1,6 @@
- name: Check run
- 
- on:
+name: Check run
+
+on:
   push:
     branches:
       - main
@@ -14,6 +14,13 @@
 jobs:
   check-run:
     runs-on: ubuntu-latest
+
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        options: --shm-size 2g
+        ports:
+          - 4444:4444
 
     steps:
     - name: Checkout
