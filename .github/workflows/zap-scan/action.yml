@@ -1,7 +1,7 @@
 on
-name: 'ZAP Scan'
-description: 'Runs a ZAP baseline scan against a specified target'
-author: 'Your Name <your.email@example.com>'
+name:'ZAP Scan'
+description:'Runs a ZAP baseline scan against a specified target'
+author:'Your Name <your.email@example.com>'
 inputs:
   target:
     description: 'The target URL to scan'
@@ -22,3 +22,4 @@ runs:
     - report.html
   env:
     ALLOW_ISSUE_WRITING: ${{ inputs.allow_issue_writing }}
+
