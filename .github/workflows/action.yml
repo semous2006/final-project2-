@@ -1,10 +1,9 @@
 on
-name:'ZAP Scan'
-
-description:'Runs a ZAP baseline scan against a specified target'
-author:'Your Name <your.email@example.com>'
+name: 'ZAP Scan'
+description: 'Runs a ZAP baseline scan against a specified target'
+author: 'Your Name <your.email@example.com>'
 inputs:
-  target:'https://thinking-tester-contact-list.herokuapp.com'
+  target:
     description: 'The target URL to scan'
     required: true
   allow_issue_writing:
