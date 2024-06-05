@@ -23,6 +23,13 @@ jobs:
           npm ci
           npx cypress run
 
+      - name: Checkout repository (again)
+        uses: actions/checkout@v2
+        with:
+          timeout-minutes: 10  # Adjust the timeout duration as needed
+
+
+
 
 
 
