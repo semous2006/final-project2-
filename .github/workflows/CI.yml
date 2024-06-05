@@ -17,11 +17,10 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies and run Cypress tests
+        run: |
+          npm install
+          npx cypress run
         working-directory: ./final-project2-
 
-      - name: Run Cypress tests
-        run: npx cypress run
-        working-directory: ./final-project2-
 
