@@ -20,8 +20,9 @@ jobs:
       - name: Install dependencies and run Cypress tests
         working-directory: ./final-project2-
         run: |
-          npm install
+          npm ci
           npx cypress run
+
 
 
 
