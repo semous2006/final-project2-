@@ -8,7 +8,6 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    timeout-minutes: 10  # Adjust the timeout duration as needed
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -19,10 +18,11 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies and run Cypress tests
-        working-directory: ./final-project2-
         run: |
+          cd ./final-project2-
           npm ci
           npx cypress run
+
 
 
 
