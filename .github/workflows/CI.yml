@@ -18,9 +18,10 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies and run Cypress tests
+        working-directory: ./final-project2-
         run: |
           npm install
           npx cypress run
-        working-directory: ./final-project2-
+
 
 
