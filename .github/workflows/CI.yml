@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies and run Cypress tests
         run: |
-          cd ./final-project2-
+          cd ./final-project2- || exit 1
           npm ci
           npx cypress run
 
@@ -40,10 +40,6 @@ jobs:
             echo ".zap/rules.tsv file not found"
           fi
 
-      - name: Checkout repository (again)
-        uses: actions/checkout@v2
-        with:
-          timeout-minutes: 10  # Adjust the timeout duration as needed
 
 
 
