@@ -12,10 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Debugging - List directory contents
+      - name: Debugging - List root directory contents
         run: |
           pwd
           ls -la
+
+      - name: Debugging - List contents of the expected directory
+        run: |
+          ls -la ./final-project2-
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -40,6 +44,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           timeout-minutes: 10  # Adjust the timeout duration as needed
+
 
 
 
