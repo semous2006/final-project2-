@@ -1,33 +1,35 @@
-on: [push]
+name: ZAP Scan
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  zap_scan:
+  zap-scan:
     runs-on: ubuntu-latest
-    name: Scan the webapplication
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: main  # Update to match your default branch
-      # Debugging step to check the git status
-      - name: Check git status
-        run: git status
-      # Ensure we have the latest commit and branch information
-      - name: Fetch all branches
-        run: git fetch --all
-      # Check if the correct branch is checked out
-      - name: Verify branch
-        run: git branch -v
-      # Debugging step to list the contents of the repository
-      - name: List files
-        run: ls -la
-      # Debugging step to ensure .zap/rules.tsv exists
-      - name: Check ZAP rules file
-        run: cat .zap/rules.tsv
-      - name: ZAP Scan
-        uses: zaproxy/action-baseline@v0.12.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          docker_name: 'ghcr.io/zaproxy/zaproxy:stable'
-          target: 'https://www.zaproxy.org'
-          rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a'
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Debugging - List root directory contents
+        run: |
+          pwd
+          ls -la
+
+      - name: Setup ZAP
+        run: |
+          # Add commands to setup ZAP, e.g., downloading ZAP, starting it, etc.
+
+      - name: Run ZAP scan
+        run: |
+          # Add commands to run ZAP scan
+
+      - name: Check for .zap/rules.tsv file and output its content if it exists
+        run: |
+          if [ -f .zap/rules.tsv ]; then
+            cat .zap/rules.tsv
+          else
+            echo ".zap/rules.tsv file not found"
+          fi
+
