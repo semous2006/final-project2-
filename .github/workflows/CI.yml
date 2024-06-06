@@ -25,17 +25,18 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-
+          
       - name: Install dependencies and run Cypress tests
         run: |
-          if [ -d ./final-project2- ]; then
-            cd ./final-project2-
+          if [ -d ./path/to/final-project2- ]; then
+            cd ./path/to/final-project2-
             npm ci
             npx cypress run
           else
-            echo "Directory ./final-project2- does not exist"
+            echo "Directory ./path/to/final-project2- does not exist"
             exit 1
           fi
+
 
 
 
