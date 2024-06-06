@@ -17,7 +17,7 @@ jobs:
           pwd
           ls -la
 
-      - name: Debugging - List contents of the expected directory
+      - name: Debugging - List contents of ./final-project2- directory
         run: |
           ls -la ./final-project2-
 
@@ -28,16 +28,13 @@ jobs:
 
       - name: Install dependencies and run Cypress tests
         run: |
-          cd ./final-project2- || exit 1
-          npm ci
-          npx cypress run
-
-      - name: Check for .zap/rules.tsv file and output its content if it exists
-        run: |
-          if [ -f .zap/rules.tsv ]; then
-            cat .zap/rules.tsv
+          if [ -d ./final-project2- ]; then
+            cd ./final-project2-
+            npm ci
+            npx cypress run
           else
-            echo ".zap/rules.tsv file not found"
+            echo "Directory ./final-project2- does not exist"
+            exit 1
           fi
 
 
