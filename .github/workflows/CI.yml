@@ -28,14 +28,15 @@ jobs:
 
       - name: Install dependencies and run Cypress tests
         run: |
-          if [ -d ./final-project2- ]; then
-            cd ./final-project2-
+          if [ -d ./Final-project2 ]; then
+            cd ./Final-project2
             npm ci
             npx cypress run
           else
-            echo "Directory ./final-project2- does not exist"
+            echo "Directory ./Final-project2 does not exist"
             exit 1
           fi
+
 
 
 
