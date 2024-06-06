@@ -17,9 +17,9 @@ jobs:
           pwd
           ls -la
 
-      - name: Debugging - List contents of ./final-project2- directory
+      - name: Debugging - List contents of the entire repository
         run: |
-          ls -la ./final-project2-
+          find . -type d
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
