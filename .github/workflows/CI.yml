@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Debugging
+      - name: Debugging - List directory contents
         run: |
           pwd
           ls -la
@@ -28,10 +28,19 @@ jobs:
           npm ci
           npx cypress run
 
+      - name: Check for .zap/rules.tsv file
+        run: |
+          if [ -f .zap/rules.tsv ]; then
+            cat .zap/rules.tsv
+          else
+            echo ".zap/rules.tsv file not found"
+          fi
+
       - name: Checkout repository (again)
         uses: actions/checkout@v2
         with:
           timeout-minutes: 10  # Adjust the timeout duration as needed
+
 
 
 
