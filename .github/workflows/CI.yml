@@ -16,10 +16,8 @@ jobs:
         run: |
           pwd
           ls -la
-
-      - name: Debugging - List all directories
-        run: |
-          find . -type d
+          echo "Looking for Final-project2 directory..."
+          find . -type d -name "Final-project2"
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -29,11 +27,15 @@ jobs:
       - name: Install dependencies and run Cypress tests
         run: |
           if [ -d ./Final-project2 ]; then
-            cd ./Final-project2
+            echo "Directory Final-project2 exists. Changing directory..."
+            cd Final-project2
+            echo "Current directory contents:"
+            ls -la
+            echo "Installing npm dependencies and running Cypress tests..."
             npm ci
             npx cypress run
           else
-            echo "Directory ./Final-project2 does not exist"
+            echo "Directory ./Final-project2 does not exist. Exiting..."
             exit 1
           fi
 
