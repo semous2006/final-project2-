@@ -14,10 +14,13 @@ jobs:
 
       - name: Debugging - List root directory contents
         run: |
-          pwd
+          echo "Current directory: $(pwd)"
+          echo "Root directory contents:"
           ls -la
-          echo "Looking for Final-project2 directory..."
-          find . -type d -name "Final-project2"
+          echo "Looking for directories..."
+          find . -type d
+          echo "Looking for files..."
+          find . -type f
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -37,7 +40,8 @@ jobs:
           else
             echo "Directory ./Final-project2 does not exist. Exiting..."
             exit 1
-          fi
+
+
 
 
 
