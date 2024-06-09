@@ -11,14 +11,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16' # Ensure compatibility with your project
+          node-version: '16'  # Ensure compatibility with your project
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           build: npm run build
           start: npm start
+
 
