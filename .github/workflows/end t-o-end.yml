@@ -1,5 +1,4 @@
 name: End-to-end tests
-
 on: push
 jobs:
   cypress-run:
@@ -7,45 +6,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '16'
-
-      - name: Install dependencies
-        run: |
-          echo "Installing dependencies..."
-          npm ci
-
-      - name: Build project
-        run: |
-          echo "Building project..."
-          npm run build
-
-      - name: Start server
-        run: |
-          echo "Starting server..."
-          npm start &
-        env:
-          CI: true  # Ensure CI environment variable is set      
-
-      - name: Wait for server to be ready
-
-        uses: jakejarvis/wait-action@v0.1.1
-        with:
-          timeout: '60'  # Wait for 60 seconds
-          url: 'http://localhost:3000'  # Adjust to your server's URL
-
-      - name: Verify server is running
-        run: |
-          echo "Verifying server is running..."
-          curl -I http://localhost:3000
-
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        with:
-          config-file: cypress.json  # Ensure you have the correct config file
-        env:
-          CI: true  # Ensure CI environment variable is set
+
+      
 
