@@ -27,10 +27,9 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          build: npm run build # if you have a build step
-          start: npm start # if you have a start step
-          wait-on: http://localhost:3000 # replace with your app URL
-          wait-on-timeout: 60
+          record: false
+          publish-summary: true
+
 
 
 
