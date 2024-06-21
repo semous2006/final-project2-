@@ -1,3 +1,10 @@
 .DS_Store
 .DS_Store
 .DS_Store
+node_modules/
+eval "SSH_AUTH_SOCK=/var/folders/5s/wqsvrryn2g7bglfy3hzy5b_w0000gn/T//ssh-aGOyEBm68zdZ/agent.4842; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=4843; export SSH_AGENT_PID;
+echo Agent pid 4843;"
+eval "SSH_AUTH_SOCK=/var/folders/5s/wqsvrryn2g7bglfy3hzy5b_w0000gn/T//ssh-VVPDDqPmfHnp/agent.4851; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=4852; export SSH_AGENT_PID;
+echo Agent pid 4852;".pub
