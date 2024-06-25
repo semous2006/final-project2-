@@ -1,0 +1,25 @@
+on
+name:'ZAP Scan'
+description:'Runs a ZAP baseline scan against a specified target'
+author:'Your Name <your.email@example.com>'
+inputs:
+  target:
+    description: 'The target URL to scan'
+    required: true
+  allow_issue_writing:
+    description: 'Allow writing issues to the repository'
+    required: false
+    default: 'false'
+
+runs:
+  using: 'docker'
+  image: 'owasp/zap2docker-stable'
+  args:
+    - zap-baseline.py
+    - -t
+    - ${{ inputs.target }}
+    - -r
+    - report.html
+  env:
+    ALLOW_ISSUE_WRITING: ${{ inputs.allow_issue_writing }}
+
