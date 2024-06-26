@@ -24,3 +24,4 @@ jobs:
           record: false
           publish-summary: true
           component: false
+
