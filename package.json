@@ -1,18 +1,17 @@
 {
-  "name": "final-project2",
+  "name": "final-project2-",
   "version": "1.0.0",
-  "description": "Test Plan for Contact List App",
+  "description": "",
   "main": "cypress.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "cypress run"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eslam Hassan",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
-  },
-  "devDependencies": {
-    "cypress": "^13.12.0"
+    "cypress": "^8.4.0"
   }
 }
+
