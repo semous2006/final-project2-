@@ -22,8 +22,4 @@
 //
 //
 // -- This will overwrite an existing command --
-<<<<<<< HEAD
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-=======
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
->>>>>>> b0a4523763cdbe23761d078577e1a44dec941372
