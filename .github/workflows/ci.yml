@@ -1,45 +1,25 @@
-name: CI
 
-on:
-  push:
-    branches:
-      - main
 
-jobs:
-  cypress-run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
 
-      - name: Debugging - List root directory contents
-        run: |
-          echo "Current directory: $(pwd)"
-          echo "Root directory contents:"
-          ls -la
-          echo "Looking for directories..."
-          find . -type d
-          echo "Looking for files..."
-          find . -type f
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
 
-      - name: Install dependencies and run Cypress tests
-        run: |
-          if [ -d ./Final-project2 ]; then
-            echo "Directory Final-project2 exists. Changing directory..."
-            cd Final-project2
-            echo "Current directory contents:"
-            ls -la
-            echo "Installing npm dependencies and running Cypress tests..."
-            npm ci
-            npx cypress run
-          else
-            echo "Directory ./Final-project2 does not exist. Exiting..."
-            exit 1
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
