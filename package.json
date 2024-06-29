@@ -10,8 +10,7 @@
   "keywords": [],
   "author": "Eslam Hassan",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^8.4.0"
+  "devDependencies": {
+    "cypress": "^13.12.0"
   }
 }
-
