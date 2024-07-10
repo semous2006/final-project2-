@@ -1,0 +1,73 @@
+import { beforeEach, describe, it } from 'cypress';
+
+describe('Contact List App Tests', () => {
+    beforeEach(() => {
+        // Visit the contact list application URL before each test
+        cy.visit('https://thinking-tester-contact-list.herokuapp.com/');
+    });
+
+    it('should display the homepage with the correct title', () => {
+        // Verify that the homepage loads correctly and contains the expected title
+        cy.title().should('eq', 'Thinking Tester Contact List');
+    });
+
+    it('should allow users to add a new contact', () => {
+        // Click on the "Add Contact" button
+        cy.contains('Add Contact').click();
+
+        // Fill in the contact details in the form
+        cy.get('#name').type('John Doe');
+        cy.get('#email').type('john.doe@example.com');
+        cy.get('#phone').type('1234567890');
+
+        // Click on the "Save" button to add the contact
+        cy.contains('Save').click();
+
+        // Verify that the new contact is added to the contact list
+        cy.contains('John Doe').should('be.visible');
+    });
+
+    it('should allow users to edit an existing contact', () => {
+        // Find an existing contact and click on the "Edit" button
+        cy.contains('Edit').first().click();
+
+        // Modify the contact details in the form
+        cy.get('#name').clear().type('Jane Smith');
+        cy.get('#email').clear().type('jane.smith@example.com');
+
+        // Click on the "Save" button to update the contact
+        cy.contains('Save').click();
+
+        // Verify that the contact details are updated in the contact list
+        cy.contains('Jane Smith').should('be.visible');
+    });
+
+    it('should allow users to delete an existing contact', () => {
+        // Find an existing contact and click on the "Delete" button
+        cy.contains('Delete').first().click();
+
+        // Confirm the deletion
+        cy.get('.swal2-confirm').click();
+
+        // Verify that the contact is removed from the contact list
+        cy.contains('John Doe').should('not.exist');
+    });
+
+    it('should display a confirmation message after adding a contact', () => {
+        // Click on the "Add Contact" button
+        cy.contains('Add Contact').click();
+
+        // Fill in the contact details in the form
+        cy.get('#name').type('Jane Doe');
+        cy.get('#email').type('jane.doe@example.com');
+        cy.get('#phone').type('9876543210');
+
+        // Click on the "Save" button to add the contact
+        cy.contains('Save').click();
+
+        // Verify that a success message is displayed after adding the contact
+        cy.contains('Contact added successfully').should('be.visible');
+    });
+});
+
+  
