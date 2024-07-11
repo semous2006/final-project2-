@@ -1,8 +1,8 @@
 // cypress/support/commands.js
-
 Cypress.Commands.add('login', (email, password) => {
-    cy.visit('/login');
-    cy.get('#email').type(email);
+    cy.visit('https://thinking-tester-contact-list.herokuapp.com/login');
+    cy.get('#username').type(email);
     cy.get('#password').type(password);
-    cy.get('button[type="submit"]').click();
-});
+    cy.contains('Login').click();
+  });
+  

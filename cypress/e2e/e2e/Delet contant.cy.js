@@ -1,8 +1,14 @@
-// TC006: Delete a contact
-it('TC006 - Delete a contact', () => {
-  cy.visit('/loginhttps://thinking-tester-contact-list.herokuapp.com'); 
-  cy.login('semo.us_2006@yahoo.com', '1234567');
-  cy.visit('/contactList');
-  cy.contains('John Smith').parent().find('button').click(); 
-  cy.contains('John Smith').should('not.exist');
+describe('Delete User', () => {
+  it('should delete a user successfully', () => {
+    const userId = 123;
+
+    cy.request({
+      method: 'DELETE',
+      url: `https://thinking-tester-contact-list.herokuapp.com/users/${userId}`,
+    }).then((response) => {
+      // Assertions to ensure the delete was successful
+      expect(response.status).to.eq(200);
+      // Add more assertions if needed
+    });
+  });
 });
