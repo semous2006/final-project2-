@@ -5,13 +5,21 @@
   "main": "cypress.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
     "cy:run": "cypress run",
     "cy:open": "cypress open"
+=======
+    "cy:run": "cypress run"
+>>>>>>> 5622a1eb3446bc968b222de584eac7c7c773e10f
   },
   "keywords": [],
   "author": "Eslam Hassan",
   "license": "ISC",
   "devDependencies": {
+<<<<<<< HEAD
     "cypress": "^13.13.0"
+=======
+    "cypress": "^13.12.0"
+>>>>>>> 5622a1eb3446bc968b222de584eac7c7c773e10f
   }
 }
