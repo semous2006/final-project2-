@@ -11,8 +11,7 @@
   "keywords": [],
   "author": "Eslam Hassan",
   "license": "ISC",
-  "devDependencies": {
-    "cypress": "^13.13.0"
+  "dependencies": {
+    "cypress": "^13.13.1"
   }
 }
-

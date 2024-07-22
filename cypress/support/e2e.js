@@ -1,0 +1,9 @@
+// cypress/support/e2e.js
+
+// Import commands.js using ES2015 syntax:
+import './commands';
+
+// Alternatively you can use CommonJS syntax:
+// require('./commands');
+
+// This is your support file. You can add custom commands and configuration here.

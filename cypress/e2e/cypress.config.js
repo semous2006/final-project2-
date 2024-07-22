@@ -19,6 +19,7 @@ module.exports = defineConfig({
       // Return the modified config
       return config;
     },
+    specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}", // Ensure this line is present
+    supportFile: 'cypress/support/e2e.js', // Ensure this line is present
   },
 });
-
