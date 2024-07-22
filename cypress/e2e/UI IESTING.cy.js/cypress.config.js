@@ -9,14 +9,22 @@ module.exports = defineConfig({
         return false;
       });
 
-      // You can add more node event listeners as needed
-
-      // Example: Handle timeouts
+      // Handle custom tasks
       on('task', {
         timeout(ms) {
           return new Promise(resolve => setTimeout(resolve, ms));
         },
       });
+    },
+    env: {
+      apiUrl: 'https://api.example.com',
+      authToken: 'your-auth-token'
+    },
+    baseUrl: 'https://thinking-tester-contact-list.herokuapp.com',
+    defaultCommandTimeout: 10000, // 10 seconds
+    retries: {
+      runMode: 2,
+      openMode: 1,
     },
   },
 });

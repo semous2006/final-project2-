@@ -13,5 +13,12 @@ describe('Authentication Tests', () => {
 
     // Verify that the password reset email confirmation message is displayed
     cy.contains('Password reset email sent').should('be.visible');
+    
+    // Optional: Check if a confirmation email was actually sent (if applicable)
+    // This would require integration with an email testing tool or a mock service
+    // cy.task('checkEmail', { email: 'semo.us_2006@yahoo.com' }).then((emailSent) => {
+    //   expect(emailSent).to.be.true;
+    // });
   });
 });
+

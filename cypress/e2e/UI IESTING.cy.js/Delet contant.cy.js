@@ -15,6 +15,12 @@ describe('Contact Management Tests', () => {
     
     // Find and delete a specific contact (assuming 'John Smith' exists in the list)
     cy.contains('John Smith').parent().find('button').click(); // Click on the delete button or action
+    
+    // Handle potential confirmation dialog
+    cy.on('window:confirm', (str) => {
+      expect(str).to.equal('Are you sure you want to delete this contact?'); // Adjust if your confirmation message is different
+      return true; // Automatically confirm the dialog
+    });
 
     // Verify that the deleted contact is no longer visible in the contact list
     cy.contains('John Smith').should('not.exist');

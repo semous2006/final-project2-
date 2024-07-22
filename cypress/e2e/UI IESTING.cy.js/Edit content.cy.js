@@ -24,7 +24,15 @@ describe('Contact Management Tests', () => {
     // Save the changes
     cy.contains('Save').click();
 
+    // Handle possible confirmation or success messages (if any)
+    cy.on('window:alert', (str) => {
+      expect(str).to.contains('Contact updated successfully'); // Adjust this message based on your application's behavior
+      return true; // Automatically confirm the alert
+    });
+
     // Verify that the edited contact details are updated and visible
-    cy.contains('Samy Joe').should('be.visible'); // Adjust this assertion based on your application's behavior
+    cy.contains('Samy Joe').should('be.visible');
+    cy.contains('Sam Joe').should('not.exist'); // Ensure old name is no longer visible
   });
 });
+

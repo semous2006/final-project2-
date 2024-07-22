@@ -2,7 +2,6 @@ describe('Contact Management Tests', () => {
   // TC008: Search with invalid input
   it('TC008 - Search with invalid input', () => {
     // Visit the login page and login
-    cy.visit('https://thinking-tester-contact-list.herokuapp.com/login');
     cy.login('semo.us_2006@yahoo.com', '1234567');
 
     // Navigate to the contact list page
@@ -16,5 +15,6 @@ describe('Contact Management Tests', () => {
     cy.contains('No matching contacts').should('be.visible');
   });
 });
+
 
   

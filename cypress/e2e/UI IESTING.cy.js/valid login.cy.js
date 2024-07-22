@@ -13,5 +13,8 @@ describe('Authentication Tests', () => {
 
     // Verify successful login and navigation to the home page
     cy.url().should('include', '/home');
+    
+    // Verify that a user-specific element or content is visible on the home page
+    cy.contains('Welcome').should('be.visible'); // Adjust this assertion based on your application's content
   });
 });

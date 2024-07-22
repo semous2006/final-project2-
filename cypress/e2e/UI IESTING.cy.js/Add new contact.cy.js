@@ -17,7 +17,7 @@ describe('Contact List App Tests', () => {
     cy.contains('Add Contact').click();
     
     // Enter details for the new contact
-    cy.get('#firstName').type('sam');
+    cy.get('#firstName').type('Sam');
     cy.get('#lastName').type('Joe');
     cy.get('#email').type('samjoe@yahoo.com');
     
@@ -28,6 +28,5 @@ describe('Contact List App Tests', () => {
     cy.contains('Sam Joe').should('be.visible');
   });
 });
-
   
   
