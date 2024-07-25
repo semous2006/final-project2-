@@ -1,32 +1,23 @@
 describe('Contact List App Tests', () => {
-  // TC004: Add a new contact
   it('TC004 - Add a new contact', () => {
-    // Visit the login page and login
-    cy.visit('https://thinking-tester-contact-list.herokuapp.com/login');
-    cy.get('#username').type('semo.us_2006@yahoo.com');
-    cy.get('#password').type('1234567');
-    cy.get('button[type="submit"]').click();
+    // Use the custom login command
+    cy.login('semo.us_2006@yahoo.com', '1234567');
     
-    // Verify successful login
-    cy.url().should('include', '/home');
-
     // Navigate to the contact list page
     cy.visit('https://thinking-tester-contact-list.herokuapp.com/contactList');
     
-    // Click on 'Add Contact' button
-    cy.contains('Add Contact').click();
+    // Ensure the "Add Contact" button is visible before clicking
+    cy.contains('Add Contact').should('be.visible').click();
     
-    // Enter details for the new contact
-    cy.get('#firstName').type('Sam');
-    cy.get('#lastName').type('Joe');
-    cy.get('#email').type('samjoe@yahoo.com');
+    // Fill in the contact details
+    cy.get('#firstName').should('be.visible').type('sam');
+    cy.get('#lastName').should('be.visible').type('Joe');
+    cy.get('#email').should('be.visible').type('samjoe@yahoo.com');
     
     // Save the new contact
-    cy.contains('Save').click();
+    cy.contains('Save').should('be.visible').click();
     
     // Verify that the new contact is visible in the contact list
     cy.contains('Sam Joe').should('be.visible');
   });
 });
-  
-  

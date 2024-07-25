@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // Example: Log test run start and end times
+      // Valid event registrations
       on('before:run', (details) => {
         console.log('Test run starting at:', new Date().toLocaleString());
         console.log('Run details:', details);
@@ -16,9 +16,10 @@ module.exports = defineConfig({
 
       // Other node event listeners can be added here
 
-      // Return the modified config
       return config;
     },
-    supportFile: 'cypress/support/e2e.js', // Ensure this line is present
+    specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
+    supportFile: 'cypress/support/e2e.js',
   },
 });
+

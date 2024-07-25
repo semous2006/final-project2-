@@ -1,20 +1,20 @@
-describe('Authentication Tests', () => {
-  // TC001: Login with valid credentials
-  it('TC001 - Login with valid credentials', () => {
-    // Visit the login page
-    cy.visit('https://thinking-tester-contact-list.herokuapp.com');
-
-    // Enter valid username and password
-    cy.get('#username', { timeout: 10000 }).type('semo.us_2006@yahoo.com'); // Increase timeout if necessary
-    cy.get('#password').type('1234567');
-    
-    // Click on the login button
-    cy.get('button[type="submit"]').click();
-
-    // Verify successful login and navigation to the home page
-    cy.url().should('include', '/home');
-    
-    // Verify that a user-specific element or content is visible on the home page
-    cy.contains('Welcome').should('be.visible'); // Adjust this assertion based on your application's content
-  });
+it('TC007 - Search with valid input', () => {
+  cy.visit('https://thinking-tester-contact-list.herokuapp.com');
+  
+  cy.get('#username', { timeout: 10000 }).should('be.visible').type('semo.us_2006@yahoo.com');
+  cy.get('#password').type('1234567');
+  cy.get('button[type="submit"]').click();
+  
+  // Verify login success
+  cy.url().should('include', '/home');
+  
+  // Navigate to contact list
+  cy.visit('/contactList');
+  
+  // Perform search action
+  cy.get('#search', { timeout: 10000 }).should('be.visible').type('Eslam{enter}');
+  
+  // Verify the search result
+  cy.contains('Eslam').should('be.visible');
 });
+
